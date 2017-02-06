@@ -1,0 +1,56 @@
+<?php
+
+    class CD
+    {
+        public $title;
+        public $artist;
+        public $cover_art;
+        public $price;
+    }
+
+    $first_cd = new CD();
+    $first_cd->title = "Master of Reality";
+    $first_cd->artist = "Black Sabbath";
+    $first_cd->cover_art = "images/reality.jpg";
+    $first_cd->price = 10.99;
+
+    $second_cd = new CD();
+    $second_cd->title = "Electric Ladyland";
+    $second_cd->artist = "Jimi Hendrix";
+    $second_cd->cover_art = "images/ladyland.jpg";
+    $second_cd->price = 10.99;
+
+    $third_cd = new CD();
+    $third_cd->title = "Nevermind";
+    $third_cd->artist = "Nirvana";
+    $third_cd->cover_art = "images/nevermind.jpg";
+    $third_cd->price = 10.99;
+
+    $cds = array($first_cd, $second_cd, $third_cd);
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+    <title>My CD Store</title>
+</head>
+<body>
+    <div class="container">
+        <?php
+            foreach ($cds as $album) {
+                echo "<div class='row'>
+                    <div class='col-md-6'>
+                        <img src='$album->cover_art'>
+                    </div>
+                    <div class='col-md-6'>
+                        <p>$album->title</p>
+                        <p>By $album->artist</p>
+                        <p>$$album->price</p>
+                    </div>
+                </div>
+                ";
+            }
+        ?>
+    </div>
+</body>
+</html>
